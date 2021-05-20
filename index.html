@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista zadań</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
+    <link href="css/container.css" rel="stylesheet">
+    <link href="css/taskList.css" rel="stylesheet">
+    <link href="css/tasks.css" rel="stylesheet">
+    <script defer src="js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="body">
+<div class="container">
+    <h1 class="header">Lista zadań</h1>
+    <form class="js-form form">
+        <h2 class="form__subHeader">Dodaj nowe zadanie</h2>
+        <div class="form__container">
+            <input class="js-newTask form__input" autofocus placeholder="Co jest do zrobienia?">
+            <button class="form__container--button">Dodaj zadanie</button>
+        </div>
+    </form>
+<div class="list">
+    <h2 class="list__subHeader">Lista zadań</h2>
+    <ul class="js-tasks list__tasks"></ul>
+</div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+.header {
+    font-size: 700;
+    display: flex;
+    align-self: flex-start;
+    margin-top: 20px;
+}
