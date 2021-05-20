@@ -10,3 +10,4 @@ In this project i created simple To-Do list. Functionality off this application 
 3. You can also delete tasks by clicking red button
 
 ### Example of use
+![PNG To-do List](https://github.com/Eugen-save/TODO-LIST/blob/main/images/instruction.png?raw=true)
