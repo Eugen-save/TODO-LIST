@@ -8,11 +8,8 @@ html {
 
 .body {
     font-family: 'Montserrat', sans-serif;
-    color: #111;
-    line-height: 1.15;
-    max-width: 900px;
-    margin: auto;
-    background: rgb(226, 226, 226);
+    background: #eee;
+
 }
 
 .container {
