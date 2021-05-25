@@ -14,3 +14,17 @@
 .section__body {
     padding: 20px;
 }
+
+.section__container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.section__button {
+    border: none;
+    background: none;
+    font-size: 15px;
+    color: teal;
+}
