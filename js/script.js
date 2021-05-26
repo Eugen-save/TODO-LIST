@@ -70,9 +70,7 @@
         const toggleHideButton = document.querySelector(".js-hide");
 
         if (toggleHideButton) {
-            toggleHideButton.addEventListener("click", () => {
-                toggleHideTasksDone();
-            });
+            toggleHideButton.addEventListener("click", toggleHideTasksDone);
         };
     };
 
@@ -80,10 +78,7 @@
         const completeTasksButton = document.querySelector(".js-complete");
 
         if (completeTasksButton) {
-
-            completeTasksButton.addEventListener("click", () => {
-                setAllTasksDone();
-            });
+            completeTasksButton.addEventListener("click", setAllTasksDone);
         };
     };
 
@@ -105,60 +100,57 @@
        </li>
        `;
 
-    const tasksElement = document.querySelector(".js-tasks");
-    tasksElement.innerHTML = tasks.map(taskToHtml).join("");
-};
+        const tasksElement = document.querySelector(".js-tasks");
+        tasksElement.innerHTML = tasks.map(taskToHtml).join("");
+    };
 
-const renderButtons = () => {
-    const buttonsElement = document.querySelector(".js-buttons");
+    const renderButtons = () => {
+        const buttonsElement = document.querySelector(".js-buttons");
 
-    if (!tasks.length) {
-        buttonsElement.innerHTML = "";
-        return;
-    }
+        if (!tasks.length) {
+            buttonsElement.innerHTML = "";
+            return;
+        }
 
-       buttonsElement.innerHTML = `
+        buttonsElement.innerHTML = `
             <button class="section__button js-hide">
                  ${hideTasksDone ? "Pokaż" : "Ukryj"} ukończone
             </button>
-
-            <button class="section__button js-complete" ${tasks.every(({done}) => done) ? "disabled" : ""}>
+            <button class="section__button js-complete" ${tasks.every(({ done }) => done) ? "disabled" : ""}>
                      Ukończ wszystkie
             </button>
             `
-};
+    };
 
-const render = () => {
-    renderTasks();
-    renderButtons();
-    bindRemoveEvents();
-    bindToggleDoneEvents();
-    bindButtonEvents();
-};
+    const render = () => {
+        renderTasks();
+        renderButtons();
+        bindRemoveEvents();
+        bindToggleDoneEvents();
+        bindButtonEvents();
+    };
 
-const onFormSubmit = (event) => {
-    event.preventDefault();
+    const onFormSubmit = (event) => {
+        event.preventDefault();
 
-    const newTaskElement = document.querySelector(".js-newTask");
-    const newTaskContent = newTaskElement.value.trim();
+        const newTaskElement = document.querySelector(".js-newTask");
+        const newTaskContent = newTaskElement.value.trim();
 
-    if (newTaskContent !== "") {
-        addNewTask(newTaskContent);
-        newTaskElement.value = "";
-        return;
-    }
+        if (newTaskContent !== "") {
+            addNewTask(newTaskContent);
+            newTaskElement.value = "";
+            return;
+        }
 
-    newTaskContent.focus();
+        newTaskContent.focus();
+    };
 
-};
+    const init = () => {
+        render();
 
-const init = () => {
-    render();
+        const form = document.querySelector(".js-form");
+        form.addEventListener("submit", onFormSubmit);
+    };
 
-    const form = document.querySelector(".js-form");
-
-    form.addEventListener("submit", onFormSubmit);
-};
-
-init();
+    init();
 }
