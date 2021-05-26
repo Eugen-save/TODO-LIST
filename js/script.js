@@ -96,7 +96,7 @@
           <span class="tasks__content${task.done ? "tasks__content--done" : ""}">
               ${task.content}
        </span>
-       <button class="js-remove tasks__button tasks__button--remove">🗑️</button>
+       <button class="js-remove tasks__button tasks__button--remove">🗑</button>
        </li>
        `;
 
@@ -113,10 +113,10 @@
         }
 
         buttonsElement.innerHTML = `
-            <button class="section__button js-hide">
+            <button class="section__button js-hide" ${tasks.every( ({ done }) => !done) ? "disabled" : "" } >
                  ${hideTasksDone ? "Pokaż" : "Ukryj"} ukończone
             </button>
-            <button class="section__button js-complete" ${tasks.every(({ done }) => done) ? "disabled" : ""}>
+            <button class="section__button js-complete" ${tasks.every(({ done }) => done) ? " disabled" : ""}>
                      Ukończ wszystkie
             </button>
             `
