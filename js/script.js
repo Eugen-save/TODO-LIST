@@ -53,7 +53,7 @@
         });
     };
 
-    const hideDoneTasks = () => {
+    const toggleHideTasksDone = () => {
         hideTasksDone = !hideTasksDone;
         render();
     };
@@ -71,7 +71,7 @@
 
         if (toggleHideButton) {
             toggleHideButton.addEventListener("click", () => {
-                hideDoneTasks();
+                toggleHideTasksDone();
             });
         };
     };
